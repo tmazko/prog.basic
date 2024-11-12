@@ -1,5 +1,6 @@
 from random import randint, choice
 import os
+from pickle import dump
 
 
 No = 1
@@ -54,3 +55,6 @@ for grade, languages in groups.items():
         print(f"  {language}:")
         for student in students_list:
             print(f"    {student}")
+
+with open("groups.pkl", "wb") as file:
+    dump(groups, file)
